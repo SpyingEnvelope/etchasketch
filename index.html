@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Etch a sketch</title>
+        <meta charset="UTF-8">
+        <style>
+            .etchcontainer {
+                display: grid;
+                border: 1px solid black;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: repeat(12, 1fr);
+                width: 500px;
+                height: 500px;
+            }
+
+            .white {
+                background-color: white;
+            }
+
+            .white:hover {
+                background-color: black;
+            }
+
+            .black {
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="etchcontainer">
+
+        </div>
+        <button class='reset'>Clear board</button>
+        <button class='set'>Set a new board</button>
+    </body>
+    <script src='script.js'></script>
+</html>
