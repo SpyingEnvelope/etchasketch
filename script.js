@@ -20,11 +20,37 @@ newBoard.addEventListener('click', newBoardFunction);
 function addBlackClass(event) {
     let idSelector = document.querySelector(`#${event.target.id}`);
     event.preventDefault();
-    idSelector.setAttribute('class', 'black');
+    if (event.target.className == 'white') {
+        idSelector.setAttribute('class', 'grayten');
+    }
+    else if (event.target.className == 'grayten') {
+        idSelector.setAttribute('class', 'graytwenty');
+    }
+    else if (event.target.className == 'graytwenty') {
+        idSelector.setAttribute('class', 'graythirty');
+    }
+    else if (event.target.className == 'graythirty') {
+        idSelector.setAttribute('class', 'grayfourty');
+    }
+    else if (event.target.className == 'grayfourty') {
+        idSelector.setAttribute('class', 'grayfifty');
+    }
+    else if (event.target.className == 'grayfifty') {
+        idSelector.setAttribute('class', 'graysixty');
+    }
+    else if (event.target.className == 'graysixty') {
+        idSelector.setAttribute('class', 'grayseventy');
+    }
+    else if (event.target.className == 'grayseventy') {
+        idSelector.setAttribute('class', 'grayeighty');
+    }
+    else if (event.target.className == 'grayeighty') {
+        idSelector.setAttribute('class', 'black');
+    }
 }
 
 function resetBoard(event) {
-    let blackSelector = document.querySelectorAll('.black');
+    let blackSelector = document.querySelectorAll('.black, .grayten, .graytwenty, .graythirty, .grayfourty, .grayfifty, .graysixty, .grayseventy, .grayeighty');
     for (i = 0; i < blackSelector.length; i++) {
         blackSelector[i].setAttribute('class', 'white');
     }
@@ -37,7 +63,6 @@ function newBoardFunction(e) {
         newBoardFunction();
         return;
     }
-    console.log(columns);
     let rows = prompt('How many rows do you want? (Note: Max you can have is 64)');
     if (rows > 64 || rows == null || rows < 1 || rows == undefined || rows == !rows) {
         alert('Please choose a number between 1 and 64');
