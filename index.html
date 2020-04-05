@@ -4,6 +4,11 @@
         <title>Etch a sketch</title>
         <meta charset="UTF-8">
         <style>
+            html {
+                min-height: 100%;
+                background-image: linear-gradient(to bottom right, white, #C6FAD0);
+            }
+
             .etchcontainer {
                 display: grid;
                 border: 1px solid black;
@@ -11,6 +16,54 @@
                 grid-template-rows: repeat(12, 1fr);
                 width: 500px;
                 height: 500px;
+            }
+
+            .maincontainer {
+                position: absolute;
+                left: 50%;
+                margin-left: -250px;
+                padding-left: 75px;
+                padding-right: 75px;
+                padding-bottom: 75px;
+                padding-top: 1px;
+                background-color: red;
+                border-radius: 10px;
+                box-shadow: 1px 1px 15px white;
+                text-align: center;
+            }
+
+            .reset {
+                border: none;
+                border-radius: 50%;
+                width: 70px;
+                height: 70px;
+                position: absolute;
+                left: 5px;;
+                background-color: white;
+                border: 5px double black;
+            }
+
+            .reset:hover {
+                cursor: pointer;
+            }
+
+            .set {
+                border: none;
+                border-radius: 50%;
+                width: 70px;
+                height: 70px;
+                position: absolute;
+                right: 5px;
+                background-color: white;
+                border: 5px double black;
+            }
+
+            .set:hover {
+                cursor: pointer;
+            }
+
+            h1 {
+                color: #FFF951;
             }
 
             .white {
@@ -59,11 +112,13 @@
         </style>
     </head>
     <body>
+        <main class="maincontainer">
+            <h1 id="etchheader">Etch A Sketch</h1>
         <div class="etchcontainer">
-
         </div>
         <button class='reset'>Clear board</button>
         <button class='set'>Set a new board</button>
+    </main>
     </body>
     <script src='script.js'></script>
 </html>
